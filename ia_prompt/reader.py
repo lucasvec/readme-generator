@@ -11,13 +11,13 @@ class RepoScraper:
 
     def get_soup(self, url):
         """Obtém o HTML da página"""
-        print(f"🌐 Acessando: {url}")
+        print(f"-> Acessando: {url}")
         try:
             response = requests.get(url, headers=self.headers)
             if response.status_code == 200:
                 return BeautifulSoup(response.text, "html.parser")
         except Exception as e:
-            print(f"❌ Erro ao acessar {url}: {e}")
+            print(f"XXX Erro ao acessar {url}: {e}")
 
         return None
 
@@ -55,7 +55,7 @@ class RepoScraper:
 
         # Processa todas as pastas
         for pasta, link in sorted(dados["pastas"].items()):  # Ordena para manter a estrutura organizada
-            print(f"📂 Entrando na pasta: {pasta}")
+            print(f"<> Entrando na pasta: {pasta}")
             estrutura += f"{prefixo}{pasta}:\n"
             time.sleep(1)  # Evita sobrecarga de requisições no GitHub
             estrutura += self.listar_estrutura(link, prefixo + "  ")
@@ -68,9 +68,9 @@ class RepoScraper:
 
     def run(self):
         """Executa a extração da estrutura do repositório"""
-        print("🔄 Iniciando a extração de estrutura completa do repositório...\n")
+        print("<---> Iniciando a extracao de estrutura completa do repositorio...\n")
         estrutura = self.listar_estrutura(self.repo_url)
-        print("✅ Extração concluída!\n")
+        print("Extracao concluida!\n")
         print(estrutura)
         return estrutura
 
