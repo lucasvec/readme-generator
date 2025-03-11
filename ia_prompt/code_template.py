@@ -10,7 +10,7 @@ tarefa_class =  '''
                     """
 
                     def __init__(self, titulo, descricao, prazo, concluida=False):
-                        """
+                        " q""
                         Inicializa uma nova tarefa.
 
                         :param titulo: Título da tarefa.
