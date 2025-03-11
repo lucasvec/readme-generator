@@ -1,12 +1,18 @@
 import requests
 from google import genai
 from code_template import code_imports, tarefa_class, gerenciador_class, menu_function
+from dotenv import load_dotenv
+import os
+
+# Carregando ENV´s
+load_dotenv()
 
 def create_readme():   
     code_list = [code_imports, tarefa_class, gerenciador_class, menu_function]
 
     # Substitua pela sua chave de API
-    client = genai.Client(api_key='AIzaSyAv7OGICVlYJm6tI6S7j8SjhJKP4YPa75U')
+    GEMINI_KEY = os.getenv("GEMINI_KEY")
+    client = genai.Client(api_key=GEMINI_KEY)
 
     overview = ''
     for fragment in code_list:
