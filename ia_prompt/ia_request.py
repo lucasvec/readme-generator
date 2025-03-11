@@ -1,5 +1,4 @@
 import requests
-from openai import OpenAI
 from google import genai
 from code_template import code_imports, tarefa_class, gerenciador_class, menu_function
 
