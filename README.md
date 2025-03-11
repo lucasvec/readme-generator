@@ -1,4 +1,3 @@
-```markdown
 ## .idea
 - `inspectionProfiles:`
   - `profiles_settings.xml`
@@ -21,4 +20,3 @@
 - `LICENSE`
 - `README.md`
 - `update.py`: Script para atualizar o projeto.
-```
